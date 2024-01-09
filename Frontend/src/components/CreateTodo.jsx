@@ -4,15 +4,15 @@ export function CreateTodo() {
     const [description, setDescription] = useState("");
 
     return <div>
-        <input type="text" placeholder="title" onChange={function(e) {
+        <input class="to-do-add" type="text" placeholder="Title" onChange={function(e) {
             const value = e.target.value;
             setTitle(e.target.value);
         }}></input><br/>
-        <input type="text" placeholder="description" onChange={function(e) {
+        <input class="to-do-add" type="text" placeholder="Description" onChange={function(e) {
             const value = e.target.value;
             setDescription(e.target.value);
         }}></input><br/>
-        <button onClick={() => {
+        <button class="to-do-add" onClick={() => {
             fetch("http://localhost:3000/todo", {
                 method: "POST",
                 body: JSON.stringify({

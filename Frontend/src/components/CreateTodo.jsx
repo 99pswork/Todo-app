@@ -25,7 +25,15 @@ export function CreateTodo() {
             })
             .then(async function(res) {
                 const json = await res.json();
-                alert("Todo added");
+                console.log(res.status)
+                if(res.status==201){
+                    alert("Todo added");
+                }
+                else{
+                    alert(json.msg);
+                }
+            }).catch((e) => {
+                console.log("error recevied");
             })
         }}> Add a todo</button>
     </div>

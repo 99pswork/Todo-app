@@ -1,8 +1,8 @@
 zod = require('zod');
 
 const createTodoSchema = zod.object({
-    title: zod.string(),
-    description: zod.string(),
+    title: zod.string().min(3),
+    description: zod.string().min(3),
 })
 
 const updateTodoSchema = zod.object({

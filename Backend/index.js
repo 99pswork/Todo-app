@@ -44,7 +44,7 @@ app.put("/completed", async function(req,res){
         })
         return;
     }
-    const todoItem = todo.update({
+    await todo.update({
         _id: req.body.id,
     },
     {

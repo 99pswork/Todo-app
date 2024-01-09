@@ -38,13 +38,13 @@ app.get("/todos", async function(req,res) {
 
 app.put("/completed", async function(req,res){
     const parsedInput =  updateTodo.safeParse(req.body);
-    if(!parsedInput.sucess){
+    if(!parsedInput.success){
         res.status(411).json({
             msg: "You have sent invalid input",
         })
         return;
     }
-    await todo.update({
+    await todo.updateOne({
         _id: req.body.id,
     },
     {
